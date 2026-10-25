@@ -10,7 +10,7 @@ The pieces are:
 
 1.  **Raw**: the data as collected on the case report forms (CRFs).
 2.  **SDTM**: the same data reorganised into the CDISC standard tabulation format (one table per topic, standard variable names).
-3.  **ADaM**: analysis-ready data. Here that is one table analysis dataset subject level (ADSL) table, with one row per
+3.  **ADaM**: analysis-ready data. Here that is one table analysis dataset subject level (ADSL) table, with one row per subject
 4.  **TFL**: tables, listings and figures built from ADaM.
 5.  **RMarkdown** report to display the TFLs - as a replacement for R shiny application which needs more time to be developed
 
