@@ -102,7 +102,7 @@ There are three levels of lineage:
 
 ## How I would improve it: 
 
-The domain scripts repeat the same pattern. Putting it into functions makes each script shorter and means a fix is made once.
+The domain scripts repeat the same pattern. Putting it into functions makes each script shorter and means a fix is made once. Additionally, most of the data is not represented in the TLFs - I would include more data if I had more time.
 
 | Function | What it would do |
 |------------------------------------|------------------------------------|
