@@ -40,7 +40,7 @@ R/
 spec/                     one CSV per dataset describing each variable
 output/                   figure PNGs
 report.Rmd                the report
-SDTM_study.sqlite              the database (not committed)
+SDTM_study.sqlite         the database (not committed)
 ```
 
 ## What each stage does
