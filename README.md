@@ -119,6 +119,7 @@ Other changes that would help:
 - Deploying within Docker container to improve portability and reproducability
 - Using renv to enforce package verison
 - Used git branches for each new feature - developed as a test to focus on the new data type. Not intended as a production piece of code
+- make creating the spec of how each column was derived simpler - perhaps more automated (to reduce lines of code). Ran out of time on this piece too
 
 ## Improving Usability: a Shiny app to view the lineage
 
