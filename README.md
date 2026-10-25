@@ -132,7 +132,7 @@ A small read-only app that opens `study.sqlite` and shows what the pipeline did.
 
 Suggested packages: `shiny`, `DBI`, `RSQLite`, `visNetwork`, `DT`, `dplyr`.
 
-Every tab only reads from the metadata tables, so the app needs no changes when a new dataset is registered. It appears in the graph as soon as `register_dataset()` has run.
+Every tab only reads from the database tables, so the app needs no changes when a new dataset is registered. It simply reads the data from the structure that is present from all analysis examples, resulting in less development work per project.
 
 ## Packages
 
