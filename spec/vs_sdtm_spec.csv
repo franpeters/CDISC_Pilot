@@ -1,0 +1,20 @@
+variable,origin,source_table,source_variable,derivation
+STUDYID,Collected,RAW_VS,STUDY,Direct map
+DOMAIN,Assigned,RAW_VS,NA,Constant VS
+USUBJID,Derived,RAW_VS,PATNUM,01- + PATNUM (make_usubjid)
+VSTESTCD,Assigned,RAW_VS,NA,From vs_map lookup on source_var
+VSTEST,Assigned,RAW_VS,NA,From vs_map lookup on source_var
+VSPOS,Collected,RAW_VS,SUBPOS,"toupper, only for SYSBP, DIABP, PULSE"
+VSLOC,Collected,RAW_VS,IT.TEMP_LOC,"toupper, only for TEMP"
+VSORRES,Collected,RAW_VS,SYS_BP; DIA_BP; PULSE; IT.TEMP; IT.HEIGHT_VSORRES; IT.WEIGHT,"pivot_longer, one row per non-blank value, kept as character"
+VSORRESU,Assigned,RAW_VS,NA,"From vs_map lookup (assumed units, raw data has none)"
+VSSTRESC,Derived,RAW_VS,VSORRES,Copy of VSORRES
+VSSTRESN,Derived,RAW_VS,VSORRES,"as.numeric, NA if non-numeric"
+VSSTRESU,Derived,RAW_VS,VSORRESU,Copy of VSORRESU
+VISIT,Collected,RAW_VS,INSTANCE,Direct map
+VSDTC,Collected,RAW_VS,VTLD,"to_iso, ISO 8601, partial dates kept"
+oak_id,Lineage key,RAW_VS,oak_id,"sdtm.oak lineage key, links to RAW_VS"
+raw_source,Lineage key,RAW_VS,raw_source,"sdtm.oak lineage key, links to RAW_VS"
+patient_number,Lineage key,RAW_VS,patient_number,"sdtm.oak lineage key, links to RAW_VS"
+source_var,Lineage key,RAW_VS,source_var,Name of the raw column each row was pivoted from
+VSSEQ,Derived,RAW_VS,NA,"row_number within USUBJID, ordered by VSDTC, VSTESTCD"

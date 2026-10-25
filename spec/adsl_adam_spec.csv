@@ -1,0 +1,20 @@
+variable,origin,source_table,source_variable,derivation
+STUDYID,Predecessor,SDTM_DM,STUDYID,NA
+USUBJID,Predecessor,SDTM_DM,USUBJID,NA
+SUBJID,Predecessor,SDTM_DM,SUBJID,NA
+SITEID,Predecessor,SDTM_DM,SITEID,NA
+AGE,Predecessor,SDTM_DM,AGE,NA
+AGEU,Predecessor,SDTM_DM,AGEU,NA
+AGEGR1,Derived,SDTM_DM,AGE,"<65, 65-80, >80"
+SEX,Predecessor,SDTM_DM,SEX,NA
+RACE,Predecessor,SDTM_DM,RACE,NA
+ETHNIC,Predecessor,SDTM_DM,ETHNIC,NA
+COUNTRY,Predecessor,SDTM_DM,COUNTRY,NA
+ARM,Predecessor,SDTM_DM,ARM,NA
+ACTARM,Predecessor,SDTM_DM,ACTARM,NA
+TRT01P,Derived,SDTM_DM,ARM,Planned treatment = ARM
+TRT01A,Derived,SDTM_DM,ACTARM,Actual treatment = ACTARM
+TRTSDT,Derived,SDTM_EC,ECSTDTC,"First exposure with dose > 0 or placebo, full dates only"
+TRTEDT,Derived,SDTM_EC,ECENDTC,"Last exposure end (start date if no end), full dates only"
+TRTDURD,Derived,SDTM_EC,TRTSDT; TRTEDT,TRTEDT - TRTSDT + 1
+SAFFL,Derived,SDTM_EC,TRTSDT,Y if TRTSDT is not missing

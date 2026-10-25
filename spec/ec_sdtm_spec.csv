@@ -1,0 +1,18 @@
+variable,origin,source_table,source_variable,derivation
+STUDYID,Collected,RAW_EC,STUDY,Direct map
+DOMAIN,Assigned,RAW_EC,NA,Constant EC
+USUBJID,Derived,RAW_EC,PATNUM,01- + PATNUM (make_usubjid)
+ECREFID,Collected,RAW_EC,IT.ECREFID,Direct map
+ECTRT,Collected,RAW_EC,DRUGAD,toupper
+ECDOSE,Collected,RAW_EC,IT.ECDSTXT,"as.numeric, non-numeric text becomes NA"
+ECDOSU,Collected,RAW_EC,IT.ECDOSU,Direct map
+ECDOSFRM,Collected,RAW_EC,DOSFM,Direct map
+ECDOSFRQ,Collected,RAW_EC,DOSFRQ,Direct map
+ECROUTE,Collected,RAW_EC,IT.ECROUTE,Direct map
+VISIT,Collected,RAW_EC,VISITNAME,Direct map
+ECSTDTC,Collected,RAW_EC,IT.ECSTDAT,"to_iso, ISO 8601, partial dates kept"
+ECENDTC,Collected,RAW_EC,IT.ECENDAT,"to_iso, ISO 8601, partial dates kept"
+oak_id,Lineage key,RAW_EC,oak_id,"sdtm.oak lineage key, links to RAW_EC"
+raw_source,Lineage key,RAW_EC,raw_source,"sdtm.oak lineage key, links to RAW_EC"
+patient_number,Lineage key,RAW_EC,patient_number,"sdtm.oak lineage key, links to RAW_EC"
+ECSEQ,Derived,RAW_EC,NA,"row_number within USUBJID, ordered by ECSTDTC, ECTRT"

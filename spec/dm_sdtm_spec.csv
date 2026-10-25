@@ -1,0 +1,21 @@
+variable,origin,source_table,source_variable,derivation
+STUDYID,Collected,RAW_DM,STUDY,Direct map
+DOMAIN,Assigned,RAW_DM,NA,Constant DM
+USUBJID,Derived,RAW_DM,PATNUM,01- + PATNUM (make_usubjid)
+SUBJID,Derived,RAW_DM,PATNUM,Text after first - in PATNUM
+SITEID,Derived,RAW_DM,PATNUM,Text before - in PATNUM
+AGE,Collected,RAW_DM,IT.AGE,as.numeric
+AGEU,Assigned,RAW_DM,NA,Constant YEARS
+SEX,Collected,RAW_DM,IT.SEX,"toupper, MALE->M, FEMALE->F, else U"
+RACE,Collected,RAW_DM,IT.RACE,toupper
+ETHNIC,Collected,RAW_DM,IT.ETHNIC,toupper
+COUNTRY,Collected,RAW_DM,COUNTRY,Direct map
+ARM,Collected,RAW_DM,PLANNED_ARM,Direct map
+ARMCD,Collected,RAW_DM,PLANNED_ARMCD,Direct map
+ACTARM,Collected,RAW_DM,ACTUAL_ARM,Direct map
+ACTARMCD,Collected,RAW_DM,ACTUAL_ARMCD,Direct map
+RFICDTC,Collected,RAW_DM,IC_DT,"to_iso, ISO 8601, partial dates kept"
+DMDTC,Collected,RAW_DM,COL_DT,"to_iso, ISO 8601, partial dates kept"
+oak_id,Lineage key,RAW_DM,oak_id,"sdtm.oak lineage key, links to RAW_DM"
+raw_source,Lineage key,RAW_DM,raw_source,"sdtm.oak lineage key, links to RAW_DM"
+patient_number,Lineage key,RAW_DM,patient_number,"sdtm.oak lineage key, links to RAW_DM"

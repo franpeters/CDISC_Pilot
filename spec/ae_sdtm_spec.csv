@@ -1,0 +1,28 @@
+variable,origin,source_table,source_variable,derivation
+oak_id,Lineage key,RAW_AE,oak_id,"sdtm.oak lineage key, links to RAW_AE"
+raw_source,Lineage key,RAW_AE,raw_source,"sdtm.oak lineage key, links to RAW_AE"
+patient_number,Lineage key,RAW_AE,patient_number,"sdtm.oak lineage key, links to RAW_AE"
+AETERM,Collected,RAW_AE,IT.AETERM,assign_no_ct
+AELLT,Collected,RAW_AE,AELLT,Direct map
+AELLTCD,Collected,RAW_AE,AELLTCD,Direct map
+AEDECOD,Collected,RAW_AE,AEDECOD,Direct map
+AEPTCD,Collected,RAW_AE,AEPTCD,Direct map
+AEHLT,Collected,RAW_AE,AEHLT,Direct map
+AEHLGT,Collected,RAW_AE,AEHLGT,Direct map
+AEBODSYS,Collected,RAW_AE,AEBODSYS,Direct map
+AEBDSYCD,Collected,RAW_AE,AEBDSYCD,Direct map
+AESEV,Collected,RAW_AE,IT.AESEV,assign_no_ct + toupper
+AESER,Collected,RAW_AE,IT.AESER,"assign_ct, codelist C66742 (Yes->Y, No->N)"
+AEREL,Collected,RAW_AE,IT.AEREL,assign_no_ct + toupper
+AEACN,Collected,RAW_AE,IT.AEACN,assign_no_ct + toupper
+AEOUT,Collected,RAW_AE,AEOUTCOME,assign_no_ct + toupper
+AESDTH,Derived,RAW_AE,IT.AESDTH,"Y if Yes, else null"
+AESHOSP,Derived,RAW_AE,IT.AESHOSP,"Y if Yes, else null"
+AESLIFE,Derived,RAW_AE,IT.AESLIFE,"Y if Yes, else null"
+AESTDTC,Collected,RAW_AE,IT.AESTDAT,"assign_datetime, ISO 8601, partial dates kept"
+AEENDTC,Collected,RAW_AE,IT.AEENDAT,"assign_datetime, ISO 8601, partial dates kept"
+STUDYID,Collected,RAW_AE,STUDY,Direct map
+DOMAIN,Assigned,RAW_AE,NA,Constant AE
+USUBJID,Derived,RAW_AE,PATNUM,01- + PATNUM (make_usubjid)
+SITEID,Derived,RAW_AE,PATNUM,Text before - in PATNUM
+AESEQ,Derived,RAW_AE,NA,"derive_seq by USUBJID, AETERM, AESTDTC"
