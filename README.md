@@ -4,6 +4,8 @@
 
 A small example data pipeline that takes simulated from the `pharmaverseraw` package clinical trial data (no privacy concerns) and moves it through the standard CDISC stages. It stores every stage in one SQLite database and records where each table and variable came from creating a 'data lineage' which would be a more complex data tree once finsihed. It then produces a short QC report. This pipeline is the beginning of creating an R shiny project to show all of the data.
 
+Developed as a pilot.
+
 The pieces are:
 
 1.  **Raw**: the data as collected on the case report forms (CRFs).
@@ -116,6 +118,7 @@ Other changes that would help:
 - Write the check results to the database so the report can show them.
 - Deploying within Docker container to improve portability and reproducability
 - Using renv to enforce package verison
+- Used git branches for each new feature - developed as a test to focus on the new data type. Not intended as a production piece of code
 
 ## Improving Usability: a Shiny app to view the lineage
 
