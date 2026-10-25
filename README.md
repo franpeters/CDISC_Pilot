@@ -28,7 +28,6 @@ run_all.R                 the only file you run - sources all files in R folder
 R/
   0_common_functions.R    make_usubjid(), to_iso()
   database_functions.R    logging, saving to SQLite, lineage
-  spec_functions.R        make_spec(), set_spec_manually()
   00_setup.R              libraries, controlled terminology, database connection
   01_SDTM_ec.R            exposure
   02_SDTM_vs.R            vital signs
